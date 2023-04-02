@@ -9,6 +9,7 @@ import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import Slider from "../components/Slider";
 import Slide from "../components/Slide";
 import { slides } from "../utils/utils";
+import Service from "../components/Service";
 
 function Home() {
   let autoSlideInterval: string | number | NodeJS.Timeout | undefined;
@@ -122,63 +123,16 @@ function Home() {
 
             <ul className="grid-list">
 
-              <li>
-                <div className="service-card">
-                  <a href="" className="has-before hover:shine">
-                    <figure className="card-banner img-holder" >
-                      <img src="assets/images/service-1.jpg" alt="breakfast" width={285} height={336} loading="lazy" className="img-cover" />
-                    </figure>
-                  </a>
-                  <div className="card-content">
-                    <h3 className="title-4 card-title">
-                      <a href="#">Breakfast</a>
-                    </h3>
-
-                    <a href="#" className="btn-text hover-underline label-2">View Menu</a>
-                  </div>
-                </div>
-              </li>
-            
-              <li>
-                <div className="service-card">
-                  <a href="" className="has-before hover:shine">
-                    <figure className="card-banner img-holder" >
-                      <img src="assets/images/service-2.jpg" alt="appetizers" width={285} height={336} loading="lazy" className="img-cover" />
-                    </figure>
-                  </a>
-                  <div className="card-content">
-                    <h3 className="title-4 card-title">
-                      <a href="#">Appetizers</a>
-                    </h3>
-
-                    <a href="#" className="btn-text hover-underline label-2">View Menu</a>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div className="service-card">
-                  <a href="" className="has-before hover:shine">
-                    <figure className="card-banner img-holder" >
-                      <img src="assets/images/service-3.jpg" alt="drinks" width={285} height={336} loading="lazy" className="img-cover" />
-                    </figure>
-                  </a>
-                  <div className="card-content">
-                    <h3 className="title-4 card-title">
-                      <a href="#">Drinks</a>
-                    </h3>
-
-                    <a href="#" className="btn-text hover-underline label-2">View Menu</a>
-                  </div>
-                </div>
-              </li>
+              <Service title="Breakfast" imgUrl="assets/images/service-1.jpg" alt="breakfast" linkText="View Menu"/>
+              <Service title="Appetizer" imgUrl="assets/images/service-2.jpg" alt="appetizer" linkText="View Menu"/>
+              <Service title="Drinks" imgUrl="assets/images/service-3.jpg" alt="drinks" linkText="View Menu"/>
 
             </ul>
 
             <img src="assets/images/shape-1.png" width={246} height={412} loading="lazy" alt="shape" className="shape shape-1 move-anim" />
             <img src="assets/images/shape-2.png" width={343} height={345} loading="lazy" alt="shape" className="shape shape-2 move-anim" />
 
-            
+
           </div>
         </section>
       </article>
