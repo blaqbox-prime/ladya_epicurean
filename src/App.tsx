@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       {/* PreLoader */}
-      <Preloader loaded={preloaded} />
+      {/* <Preloader loaded={preloaded} /> */}
 
       {/* TOP BAR  */}
       <TopBar />
