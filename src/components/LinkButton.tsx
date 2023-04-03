@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { HTMLProps } from 'react'
 
 interface ILinkButton extends HTMLProps<HTMLAnchorElement> {text:string}

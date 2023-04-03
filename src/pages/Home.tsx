@@ -427,6 +427,38 @@ function Home() {
 
           </div>
         </section>
+
+        {/* Testimoniasl */}
+
+        <section
+          className="testimonials text-center section has-bg-image"
+          aria-label="testimonials"
+          id="testimonials"
+          style={{backgroundImage: "url('assets/images/testimonial-bg.jpg')"}}
+        >
+
+            <div className="container">
+              <div className="quote">”</div>
+              <p className="headline-2 testi-text">
+              I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.
+              </p>
+
+              <div className="wrapper">
+                <div className="separator"></div>
+                <div className="separator"></div>
+                <div className="separator"></div>
+              </div>
+
+            <div className="profile">
+              <img src="assets/images/testi-avatar.jpg" alt="sam" className="img" loading="lazy" height={100} width={100} />
+            </div>
+
+            <div className="label profile-name">Sam Johnson</div>
+
+            </div>
+
+        </section>
+
       </article>
     </main>
   );
