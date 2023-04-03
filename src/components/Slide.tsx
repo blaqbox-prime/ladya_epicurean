@@ -13,7 +13,7 @@ export interface ISlide {
 
 export default function Slide({active = false,imageUrl,title1,title2,subtitle,text,linkText = "View Our Menu", secondary = false}: ISlide) {
   return (
-    <li className={`slider-item ${active && "active"}`} data-testId="slide-item">
+    <li className={`slider-item ${active && "active"}`}>
                 <div className="slider-bg">
                   <img src={imageUrl} width={1880} height={950} alt="" className="img-cover"/>
                 </div>

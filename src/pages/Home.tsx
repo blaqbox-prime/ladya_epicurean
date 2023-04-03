@@ -2,7 +2,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React, { useEffect, useState } from "react";
-import { IoChevronBack, IoChevronForward } from "react-icons/io5";
+import {
+  IoCalendarClear,
+  IoChevronBack,
+  IoChevronDown,
+  IoChevronForward,
+  IoPersonOutline,
+  IoTimeOutline,
+} from "react-icons/io5";
 import Slider from "../components/Slider";
 import Slide from "../components/Slide";
 import { slides } from "../utils/utils";
@@ -373,11 +380,11 @@ function Home() {
               />
 
               <MenuItem
-                 title="Lasagne"
-                 description="Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices"
-                 imgUrl="assets/images/menu-2.png"
-                 price={39.99}
-                 alt="lasagne"
+                title="Lasagne"
+                description="Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices"
+                imgUrl="assets/images/menu-2.png"
+                price={39.99}
+                alt="lasagne"
               />
 
               <MenuItem
@@ -386,7 +393,6 @@ function Home() {
                 imgUrl="assets/images/menu-3.png"
                 price={29.99}
                 alt="Butternut Pumpkin"
-               
               />
 
               <MenuItem
@@ -399,11 +405,11 @@ function Home() {
               />
 
               <MenuItem
-                  title="Olivas Rellenas"
-                  description="Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper"
-                  imgUrl="assets/images/menu-5.png"
-                  price={23.99}
-                  alt="Olivas Rellenas"
+                title="Olivas Rellenas"
+                description="Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper"
+                imgUrl="assets/images/menu-5.png"
+                price={23.99}
+                alt="Olivas Rellenas"
               />
 
               <MenuItem
@@ -416,15 +422,29 @@ function Home() {
             </GridList>
 
             <p className="menu-text text-center">
-              During winter daily from <span className="span">7:00 </span> am to <span className="span">9:00 pm</span> 
+              During winter daily from <span className="span">7:00 </span> am to{" "}
+              <span className="span">9:00 pm</span>
             </p>
 
-            <LinkButton href="#" text="View All Menu"/>
+            <LinkButton href="#" text="View All Menu" />
 
-            <img src="assets/images/shape-5.png" width={921}  height={103} loading="lazy" alt="shape" className="shape shape-2 move-anim" />
+            <img
+              src="assets/images/shape-5.png"
+              width={921}
+              height={103}
+              loading="lazy"
+              alt="shape"
+              className="shape shape-2 move-anim"
+            />
 
-            <img src="assets/images/shape-6.png" width={343}  height={345} loading="lazy" alt="shape" className="shape shape-3 move-anim" />
-
+            <img
+              src="assets/images/shape-6.png"
+              width={343}
+              height={345}
+              loading="lazy"
+              alt="shape"
+              className="shape shape-3 move-anim"
+            />
           </div>
         </section>
 
@@ -434,31 +454,159 @@ function Home() {
           className="testimonials text-center section has-bg-image"
           aria-label="testimonials"
           id="testimonials"
-          style={{backgroundImage: "url('assets/images/testimonial-bg.jpg')"}}
+          style={{ backgroundImage: "url('assets/images/testimonial-bg.jpg')" }}
         >
+          <div className="container">
+            <div className="quote">”</div>
+            <p className="headline-2 testi-text">
+              I wanted to thank you for inviting me down for that amazing dinner
+              the other night. The food was extraordinary.
+            </p>
 
-            <div className="container">
-              <div className="quote">”</div>
-              <p className="headline-2 testi-text">
-              I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.
-              </p>
-
-              <div className="wrapper">
-                <div className="separator"></div>
-                <div className="separator"></div>
-                <div className="separator"></div>
-              </div>
+            <div className="wrapper">
+              <div className="separator"></div>
+              <div className="separator"></div>
+              <div className="separator"></div>
+            </div>
 
             <div className="profile">
-              <img src="assets/images/testi-avatar.jpg" alt="sam" className="img" loading="lazy" height={100} width={100} />
+              <img
+                src="assets/images/testi-avatar.jpg"
+                alt="sam"
+                className="img"
+                loading="lazy"
+                height={100}
+                width={100}
+              />
             </div>
 
             <div className="label profile-name">Sam Johnson</div>
-
-            </div>
-
+          </div>
         </section>
 
+        {/* Reservation */}
+
+        <section className="reservation">
+          <div className="container">
+            <div className="form reservation-form bg-black-10">
+              <form action="" className="form-left">
+                <h2 className="headline-1 text-center">Online Reservation</h2>
+                <p className="form-text text-center">
+                  Booking request{" "}
+                  <a href="tel:07458124578" className="linl">
+                    07458124578
+                  </a>
+                  or fill out the order form
+                </p>
+
+                <div className="input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Your Name"
+                    autoComplete="off"
+                    className="input-field"
+                  />
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="Phone Number"
+                    className="input-field"
+                  />
+                </div>
+
+                <div className="input-wrapper">
+                  <div className="icon-wrapper">
+                    <IoPersonOutline aria-hidden />
+                    <select name="person" id="" className="input-field">
+                      <option value="1">1 Person</option>
+                      <option value="2">2 People</option>
+                      <option value="3">3 People</option>
+                      <option value="4">4 People</option>
+                      <option value="5">5 People</option>
+                      <option value="6">6 People</option>
+                      <option value="7">7 People</option>
+                    </select>
+                    <IoChevronDown aria-hidden />
+                  </div>
+                </div>
+
+                <div className="input-wrapper">
+                  <div className="icon-wrapper">
+                    <IoCalendarClear />
+
+                  <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    placeholder="Pick a date"
+                    autoComplete="off"
+                    className="input-field"
+                    />
+                    <IoChevronDown aria-hidden />
+                    </div>
+                </div>
+
+                <div className="input-wrapper">
+                  <div className="icon-wrapper">
+                    <IoTimeOutline />
+
+                    <select name="time" id="" className="input-field">
+                      <option value="8">08:00 AM</option>
+                      <option value="10">10:00 AM</option>
+                      <option value="12">12:00 PM</option>
+                      <option value="14">02:00 PM</option>
+                      <option value="16">04:00 PM</option>
+                      <option value="18">06:00 PM</option>
+                      <option value="20">08:00 PM</option>
+                    </select>
+                 
+                    <IoChevronDown aria-hidden />
+                    </div>
+                </div>
+
+                <textarea name="message" placeholder="Message" autoComplete="off" id="message" className="input-field"></textarea>
+
+                <button type="submit" className="btn btn-secondary">
+                  <span className="text text-1">Book A Table</span>
+                  <span className="text text-2" aria-hidden>Book A Table</span>
+                </button>
+
+              </form>
+
+              <div className="form-right text-center"
+              style={{backgroundImage: "url('assets/images/form-pattern.png')"}}
+              >
+
+                <h2 className="headline-1 text-center">Contact Us</h2>
+                <p className="contact-label">Booking Request</p>
+                <a href="tel:04875124548" className="body-1 contact-number hover-underline">04875124548</a>
+
+
+                <div className="separat"></div>
+
+                <p className="contact-label">Location</p>
+
+                <address className="body-4">
+                7 Acacia St. Flora Park, Polokwane 0699, L
+                </address>
+
+
+                <p className="contact-label">Lunch Time</p>
+
+                <p className="body-4">
+                  Monday - Sunday <br />
+                  11:00 AM - 2:30 PM
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
       </article>
     </main>
   );
