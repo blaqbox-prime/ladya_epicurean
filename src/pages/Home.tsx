@@ -7,6 +7,9 @@ import Slider from "../components/Slider";
 import Slide from "../components/Slide";
 import { slides } from "../utils/utils";
 import Service from "../components/Service";
+import MenuItem from "../components/MenuItem";
+import GridList from "../components/GridList";
+import LinkButton from "../components/LinkButton";
 
 function Home() {
   let autoSlideInterval: string | number | NodeJS.Timeout | undefined;
@@ -38,24 +41,25 @@ function Home() {
   };
 
   // Parallax
-  const parallaxItems : NodeListOf<HTMLElement> = document.querySelectorAll("[data-parallax-item]");
-  let x,y : number;
+  const parallaxItems: NodeListOf<HTMLElement> = document.querySelectorAll(
+    "[data-parallax-item]"
+  );
+  let x, y: number;
 
-  window.addEventListener("mousemove", function(event){
-
-    x = (event.clientX / window.innerWidth * 10) - 5;
-    y = (event.clientY / window.innerHeight * 10) - 5;
+  window.addEventListener("mousemove", function (event) {
+    x = (event.clientX / window.innerWidth) * 10 - 5;
+    y = (event.clientY / window.innerHeight) * 10 - 5;
 
     // Negate the mumber
-    x = x - (x*2);
-    y = y - (y*2);
+    x = x - x * 2;
+    y = y - y * 2;
 
-    for (let i =0, len = parallaxItems.length; i < len; i++){
+    for (let i = 0, len = parallaxItems.length; i < len; i++) {
       x = x * Number(parallaxItems[i].dataset.parallaxSpeed);
       y = y * Number(parallaxItems[i].dataset.parallaxSpeed);
       parallaxItems[i].style.transform = `translate3d(${x}px,${y}px,0)`;
     }
-  })
+  });
 
   return (
     <main>
@@ -243,22 +247,186 @@ function Home() {
                 data-parallax-item
                 data-parallax-speed="1.75"
               >
-                <img src="assets/images/about-abs-image.jpg" width={285} height={285} alt="about abs" className="w-100" />
+                <img
+                  src="assets/images/about-abs-image.jpg"
+                  width={285}
+                  height={285}
+                  alt="about abs"
+                  className="w-100"
+                />
               </div>
 
               <div className="abs-img abs-img-2 has-before">
-                <img src="assets/images/badge-2.png" width={133} height={134} loading="lazy" alt="abs img 2" />
+                <img
+                  src="assets/images/badge-2.png"
+                  width={133}
+                  height={134}
+                  loading="lazy"
+                  alt="abs img 2"
+                />
               </div>
-              <img src="assets/images/shape-3.png" width={197} height={194} loading="lazy" alt="" className="shape" />
+              <img
+                src="assets/images/shape-3.png"
+                width={197}
+                height={194}
+                loading="lazy"
+                alt=""
+                className="shape"
+              />
             </figure>
-        
           </div>
         </section>
 
         {/* Special Dish */}
 
-        
+        <section
+          className="special-dish text-center"
+          aria-label="special-dish"
+          id="special-dish"
+        >
+          <div className="special-dish-banner">
+            <img
+              src="assets/images/special-dish-banner.jpg"
+              width={940}
+              height={900}
+              alt="special dish"
+              className="img-cover"
+              loading="lazy"
+            />
+          </div>
 
+          <div className="special-dish-content bg-black-10">
+            <div className="container">
+              <img
+                src="assets/images/badge-1.png"
+                width={28}
+                height={41}
+                loading="lazy"
+                alt="badge"
+                className="abs-img"
+              />
+              <p className="section-subtitle label-2">Special Dish</p>
+              <h2 className="headline-1 section-title">Lobster Tortellini</h2>
+              <p className="section-text">
+                Our signature dish, Lobster Tortellini, is a must-try for any
+                seafood lover. This dish features perfectly cooked, succulent
+                chunks of lobster meat wrapped in handmade tortellini pasta,
+                complemented by a rich and creamy sauce. Our skilled chefs take
+                great care in selecting the freshest ingredients to ensure that
+                every bite is bursting with flavor. The Lobster Tortellini is
+                one of our most popular menu items, and it's easy to see why.
+                Come and indulge in this decadent dish and experience the true
+                taste of our restaurant.
+              </p>
+
+              <div className="wrapper">
+                <del className="del body-3">R428.99</del>
+                <span className="span body-1">R214.99</span>
+              </div>
+
+              <a href="#" className="btn btn-primary">
+                <span className="text text-1">View All Menu</span>
+                <span className="text text-2" aria-hidden={true}>
+                  View All Menu
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <img
+            src="asets/images/shape-4.png"
+            width={179}
+            height={359}
+            loading="lazy"
+            alt=""
+            className="shape shape-1"
+          />
+          <img
+            src="asets/images/shape-9.png"
+            width={351}
+            height={462}
+            loading="lazy"
+            alt=""
+            className="shape shape-2"
+          />
+        </section>
+
+        {/* Menu */}
+        <section className="section menu" aria-label="menu" id="menu">
+          <div className="container">
+            <p className="section-subtitle text-center label-2">
+              Special Selection
+            </p>
+            <h2 className="headline-1 section-title text-center">
+              Delicious Menu
+            </h2>
+
+            <GridList>
+              <MenuItem
+                title="Greek Salads"
+                description="Tomatoes, green bell pepper, sliced cucumber onion, olives
+                          and feta cheese."
+                imgUrl="assets/images/menu-1.png"
+                price={49.99}
+                alt="greek salad"
+                seasonal
+              />
+
+              <MenuItem
+                 title="Lasagne"
+                 description="Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices"
+                 imgUrl="assets/images/menu-2.png"
+                 price={39.99}
+                 alt="lasagne"
+              />
+
+              <MenuItem
+                title="Butternut Pumpkin"
+                description="Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand."
+                imgUrl="assets/images/menu-3.png"
+                price={29.99}
+                alt="Butternut Pumpkin"
+               
+              />
+
+              <MenuItem
+                title="Tokusen Wagyu"
+                description="Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices."
+                imgUrl="assets/images/menu-4.png"
+                price={23.99}
+                alt="Tokusen Wagyu"
+                isNew
+              />
+
+              <MenuItem
+                  title="Olivas Rellenas"
+                  description="Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper"
+                  imgUrl="assets/images/menu-5.png"
+                  price={23.99}
+                  alt="Olivas Rellenas"
+              />
+
+              <MenuItem
+                title="Opu Fish"
+                description="Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices"
+                imgUrl="assets/images/menu-6.png"
+                price={23.99}
+                alt="Opu Fish"
+              />
+            </GridList>
+
+            <p className="menu-text text-center">
+              During winter daily from <span className="span">7:00 </span> am to <span className="span">9:00 pm</span> 
+            </p>
+
+            <LinkButton href="#" text="View All Menu"/>
+
+            <img src="assets/images/shape-5.png" width={921}  height={103} loading="lazy" alt="shape" className="shape shape-2 move-anim" />
+
+            <img src="assets/images/shape-6.png" width={343}  height={345} loading="lazy" alt="shape" className="shape shape-3 move-anim" />
+
+          </div>
+        </section>
       </article>
     </main>
   );
