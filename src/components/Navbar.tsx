@@ -3,6 +3,7 @@ import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import NavbarItem from "./NavbarItem";
 import NavbarList from "./NavbarList";
+import Logo from "./Logo";
 
 
 type props = {
@@ -12,13 +13,6 @@ type props = {
 
 function Navbar({toggleNavbar, isOpen = false} : props) {
 
-  // const navbar = document.querySelector("[data-navbar]");
-  // const navTogglers = document.querySelector("[data-nav-toggler]")
-  // const overlay = document.querySelector("[data-overlay]");
-
-
-
-
   return (
     <nav className={`navbar ${isOpen && "active"}`} data-navbar>
       <button className="close-btn" aria-label="close menu" id="btn-close-menu" data-nav-toggler
@@ -27,14 +21,7 @@ function Navbar({toggleNavbar, isOpen = false} : props) {
         <IoCloseOutline  size={18} />
       </button>
 
-      <a href="#" className="logo">
-        <img
-          src="./assets/images/logo-no-background.svg"
-          height={50}
-          width={160}
-          alt="Epicurean - Home"
-        />
-      </a>
+      <Logo />
 
       <NavbarList>
         <NavbarItem link="#" text="Home" active={true}/>

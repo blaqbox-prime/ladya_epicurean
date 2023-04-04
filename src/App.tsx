@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import Preloader from "./components/Preloader";
 import TopBar from "./components/TopBar";
 import Home from "./pages/Home";
+import { IoChevronUp } from "react-icons/io5";
 
 function App() {
   const [preloaded, setPreloaded] = useState(false);
@@ -19,6 +20,12 @@ function App() {
     setIsNavOpen((isNavOpen) => !isNavOpen);
   };
 
+  
+
+
+
+
+
   return (
     <div className="App">
       {/* PreLoader */}
@@ -33,6 +40,15 @@ function App() {
       {/* PAGES */}
 
       <Home />
+
+
+      {/* BACK TO TOP */}
+
+      <a href="#top" className="back-top-btn " aria-label="back to top" data-back-top-btn 
+      >
+        <IoChevronUp aria-hidden="true"/> 
+      </a>
+
     </div>
   );
 }

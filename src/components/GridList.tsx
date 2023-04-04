@@ -3,9 +3,10 @@ import React, { HTMLProps } from 'react'
 interface IGridList extends HTMLProps<HTMLUListElement> {
 }
 
-function GridList({children}: IGridList) {
+function GridList( props : IGridList) {
+  const {children,className} = props;
   return (
-    <ul className='grid-list'>
+    <ul className={`'grid-list' ${className}`}>
         {children}
     </ul>
   )

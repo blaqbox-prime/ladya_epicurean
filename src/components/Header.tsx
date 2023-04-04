@@ -16,10 +16,13 @@ function Header({toggleNav, isNavOpen} : props) {
 
   let lastScrollPos = 0;
 
+  const backTop = document.querySelector("[data-back-top-btn]");
+
   const hideHeader = function(){
     const isScrollBottom = lastScrollPos < window.scrollY;
     if(isScrollBottom){
       headerRef.current?.classList.add("hide");
+      
     }else {
       headerRef.current?.classList.remove("hide");
     }
@@ -29,11 +32,14 @@ function Header({toggleNav, isNavOpen} : props) {
   window.addEventListener("scroll", () => {
     if(window.scrollY >= 50) {
       headerRef.current?.classList.add("active");
+      backTop?.classList.add("active");
       hideHeader();
     }else {
       headerRef.current?.classList.remove("active");
+      backTop?.classList.remove("active");
     }
   })
+
 
 
 
