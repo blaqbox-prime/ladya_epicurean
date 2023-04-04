@@ -17,6 +17,7 @@ import Service from "../components/Service";
 import MenuItem from "../components/MenuItem";
 import GridList from "../components/GridList";
 import LinkButton from "../components/LinkButton";
+import EventListItem from "../components/EventListItem";
 
 function Home() {
   let autoSlideInterval: string | number | NodeJS.Timeout | undefined;
@@ -538,16 +539,16 @@ function Home() {
                   <div className="icon-wrapper">
                     <IoCalendarClear />
 
-                  <input
-                    type="date"
-                    name="date"
-                    id="date"
-                    placeholder="Pick a date"
-                    autoComplete="off"
-                    className="input-field"
+                    <input
+                      type="date"
+                      name="date"
+                      id="date"
+                      placeholder="Pick a date"
+                      autoComplete="off"
+                      className="input-field"
                     />
                     <IoChevronDown aria-hidden />
-                    </div>
+                  </div>
                 </div>
 
                 <div className="input-wrapper">
@@ -563,37 +564,49 @@ function Home() {
                       <option value="18">06:00 PM</option>
                       <option value="20">08:00 PM</option>
                     </select>
-                 
+
                     <IoChevronDown aria-hidden />
-                    </div>
+                  </div>
                 </div>
 
-                <textarea name="message" placeholder="Message" autoComplete="off" id="message" className="input-field"></textarea>
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  autoComplete="off"
+                  id="message"
+                  className="input-field"
+                ></textarea>
 
                 <button type="submit" className="btn btn-secondary">
                   <span className="text text-1">Book A Table</span>
-                  <span className="text text-2" aria-hidden>Book A Table</span>
+                  <span className="text text-2" aria-hidden>
+                    Book A Table
+                  </span>
                 </button>
-
               </form>
 
-              <div className="form-right text-center"
-              style={{backgroundImage: "url('assets/images/form-pattern.png')"}}
+              <div
+                className="form-right text-center"
+                style={{
+                  backgroundImage: "url('assets/images/form-pattern.png')",
+                }}
               >
-
                 <h2 className="headline-1 text-center">Contact Us</h2>
                 <p className="contact-label">Booking Request</p>
-                <a href="tel:04875124548" className="body-1 contact-number hover-underline">04875124548</a>
-
+                <a
+                  href="tel:04875124548"
+                  className="body-1 contact-number hover-underline"
+                >
+                  04875124548
+                </a>
 
                 <div className="separat"></div>
 
                 <p className="contact-label">Location</p>
 
                 <address className="body-4">
-                7 Acacia St. Flora Park, Polokwane 0699, L
+                  7 Acacia St. Flora Park, Polokwane 0699, L
                 </address>
-
 
                 <p className="contact-label">Lunch Time</p>
 
@@ -601,9 +614,7 @@ function Home() {
                   Monday - Sunday <br />
                   11:00 AM - 2:30 PM
                 </p>
-
               </div>
-
             </div>
           </div>
         </section>
@@ -614,63 +625,150 @@ function Home() {
           <div className="container">
             <p className="section-subtitle label-2">Why choose us</p>
 
-              <h2 className="headline-1 section-title">Our Strength</h2>
+            <h2 className="headline-1 section-title">Our Strength</h2>
 
-              <GridList>
-                <li className="feature-item">
-                  <div className="feature-card">
-                    <div className="card-icon">
-                      <img src="assets/images/features-icon-1.png" width={100} height={80} loading="lazy" alt="icon" />
-                    </div>
-
-                    <h3 className="title-2 card-title">Hygienic Food</h3>
-                    <p className="labal-1 card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, necessitatibus.</p>
+            <GridList>
+              <li className="feature-item">
+                <div className="feature-card">
+                  <div className="card-icon">
+                    <img
+                      src="assets/images/features-icon-1.png"
+                      width={100}
+                      height={80}
+                      loading="lazy"
+                      alt="icon"
+                    />
                   </div>
-                </li>
 
-                <li className="feature-item">
-                  <div className="feature-card">
-                    <div className="card-icon">
-                      <img src="assets/images/features-icon-2.png" width={100} height={80} loading="lazy" alt="icon" />
-                    </div>
+                  <h3 className="title-2 card-title">Hygienic Food</h3>
+                  <p className="labal-1 card-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Velit, necessitatibus.
+                  </p>
+                </div>
+              </li>
 
-                    <h3 className="title-2 card-title">Casual Environment</h3>
-                    <p className="labal-1 card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, necessitatibus.</p>
+              <li className="feature-item">
+                <div className="feature-card">
+                  <div className="card-icon">
+                    <img
+                      src="assets/images/features-icon-2.png"
+                      width={100}
+                      height={80}
+                      loading="lazy"
+                      alt="icon"
+                    />
                   </div>
-                </li>
 
-                <li className="feature-item">
-                  <div className="feature-card">
-                    <div className="card-icon">
-                      <img src="assets/images/features-icon-3.png" width={100} height={80} loading="lazy" alt="icon" />
-                    </div>
+                  <h3 className="title-2 card-title">Casual Environment</h3>
+                  <p className="labal-1 card-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Velit, necessitatibus.
+                  </p>
+                </div>
+              </li>
 
-                    <h3 className="title-2 card-title">Skilled Chef</h3>
-                    <p className="labal-1 card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, necessitatibus.</p>
+              <li className="feature-item">
+                <div className="feature-card">
+                  <div className="card-icon">
+                    <img
+                      src="assets/images/features-icon-3.png"
+                      width={100}
+                      height={80}
+                      loading="lazy"
+                      alt="icon"
+                    />
                   </div>
-                </li>
 
-                <li className="feature-item">
-                  <div className="feature-card">
-                    <div className="card-icon">
-                      <img src="assets/images/features-icon-4.png" width={100} height={80} loading="lazy" alt="icon" />
-                    </div>
+                  <h3 className="title-2 card-title">Skilled Chef</h3>
+                  <p className="labal-1 card-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Velit, necessitatibus.
+                  </p>
+                </div>
+              </li>
 
-                    <h3 className="title-2 card-title">Event & Party</h3>
-                    <p className="labal-1 card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, necessitatibus.</p>
+              <li className="feature-item">
+                <div className="feature-card">
+                  <div className="card-icon">
+                    <img
+                      src="assets/images/features-icon-4.png"
+                      width={100}
+                      height={80}
+                      loading="lazy"
+                      alt="icon"
+                    />
                   </div>
-                </li>
 
-              </GridList>
+                  <h3 className="title-2 card-title">Event & Party</h3>
+                  <p className="labal-1 card-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Velit, necessitatibus.
+                  </p>
+                </div>
+              </li>
+            </GridList>
 
-              <img src="assets/images/shape-1.png" width={208} height={178} loading="lazy" alt="shape" className="shape shape-1" />
+            <img
+              src="assets/images/shape-1.png"
+              width={208}
+              height={178}
+              loading="lazy"
+              alt="shape"
+              className="shape shape-1"
+            />
 
-              <img src="assets/images/shape-8.png" width={120} height={115} loading="lazy" alt="shape" className="shape shape-2" />
-
-
+            <img
+              src="assets/images/shape-8.png"
+              width={120}
+              height={115}
+              loading="lazy"
+              alt="shape"
+              className="shape shape-2"
+            />
           </div>
         </section>
 
+        {/* Events */}
+
+        <section className="event bg-black-10">
+          <div className="container">
+            <p className="section-subtitle label-2 text-center">News</p>
+
+            <h2 className="section-title headline-1 text-center">
+              Upcoming Events
+            </h2>
+
+            <GridList>
+              <EventListItem
+                imgUrl="assets/images/event-1.jpg"
+                title="Flavour so good you'll try to eat with your eyes."
+                subtitle="Food, Flavour"
+                alt="Flavour so good you'll try to eat with your eyes."
+                date="15/09/2022"
+              />
+
+              <EventListItem
+                imgUrl="assets/images/event-2.jpg"
+                title="Flavour so good you'll try to eat with your eyes."
+                subtitle="Healthy Food"
+                alt="Flavour so good you'll try to eat with your eyes."
+                date="08/09/2022"
+              />
+
+              <EventListItem
+                imgUrl="assets/images/event-3.jpg"
+                title="Flavour so good you'll try to eat with your eyes."
+                subtitle="Recipe"
+                alt="Flavour so good you'll try to eat with your eyes."
+                date="03/09/2022"
+              />
+            </GridList>
+
+            <LinkButton text="View Our Blog"/>
+
+          </div>
+        </section>
       </article>
     </main>
   );
